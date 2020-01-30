@@ -139,12 +139,17 @@ certManager.getCertificate('localhost', (error, keyContent, crtContent) => {
 ### isRootCAFileExists()
 获取根证书是否存在的状态
 
-### ifRootCATrusted()
+### ifRootCATrusted(callback(err, isTrusted) => void)
 检测RootCA是否已经被信任
 > 1.2.1 新增对Windows平台的支持
 
 #### 返回
-- `bool` 是否存在根证书
+- 无
+
+#### 参数
+- `callback` `(err, isTrusted) => void`
+err: `any` 错误或异常
+isTrusted: `boolean` 根证书是否被信任
 
 ### clearCerts()
 清除当前目录下所有的证书文件
